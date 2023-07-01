@@ -9,6 +9,7 @@ specifiers:
   dayjs: ^1.11.8
   dotenv: ^16.3.1
   express: ^4.18.2
+  express-oauth2-jwt-bearer: ^1.5.0
   jsonwebtoken: ^9.0.0
   lodash: ^4.17.21
   nanoid: ^4.0.2
@@ -23,6 +24,7 @@ dependencies:
   dayjs: 1.11.8
   dotenv: 16.3.1
   express: 4.18.2
+  express-oauth2-jwt-bearer: 1.5.0
   jsonwebtoken: 9.0.0
   lodash: 4.17.21
   nanoid: 4.0.2
@@ -472,6 +474,13 @@ packages:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
     engines: {node: '>=0.8.x'}
 
+  /express-oauth2-jwt-bearer/1.5.0:
+    resolution: {integrity: sha512-C8avk1VfopX3zjqfTLg9EuYFjNRdmXdYncBoZGmjxQzGx7cQRiupeWV5r3G2SYGzx0gDw1uyu1cdJrmILOvd3g==}
+    engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0 || ^18.12.0 || ^20.2.0}
+    dependencies:
+      jose: 4.14.4
+    dev: false
+
   /express/4.18.2:
     resolution: {integrity: sha512-5/PsL6iGPdfQ/lKM1UuielYgv3BUoJfz1aUwU9vHZ+J7gyvwdQXFEBIEIaxeGf0GIcreATNyBExtalisDbuMqQ==}
     engines: {node: '>= 0.10.0'}
@@ -685,6 +694,10 @@ packages:
   /is-fullwidth-code-point/3.0.0:
     resolution: {integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==}
     engines: {node: '>=8'}
+    dev: false
+
+  /jose/4.14.4:
+    resolution: {integrity: sha512-j8GhLiKmUAh+dsFXlX1aJCbt5KMibuKb+d7j1JaOJG6s2UjX1PQlW+OKB/sD4a/5ZYF4RcmYmLSndOoU3Lt/3g==}
     dev: false
 
   /joycon/3.1.1:

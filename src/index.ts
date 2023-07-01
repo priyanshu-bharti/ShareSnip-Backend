@@ -1,22 +1,30 @@
 import express, { Request, Response } from "express";
-import dotenv from "dotenv";
 import pasteRouter from "./routes/pasteRoute.js";
+import defaultServerConfig from "./config/loadConfig.js";
+import jwtCheck from "./middleware/checkJwt.js";
 
-dotenv.config();
+// Load the environment variables
+const port = defaultServerConfig.port;
 
+// Configure Express Server
 const app = express();
 app.use(express.json());
 
+// Default Route
 app.get("/", (req: Request, res: Response) => {
     res.json({ test: "Ok" });
 });
 
+// Protect our routes
+app.use(jwtCheck);
+
+// Paste Router
 app.use("/paste", pasteRouter);
 
-const PORT = process.env.PORT_NUMBER || 5002;
-app.listen(PORT, () => {
+// Server Initialization
+app.listen(port, () => {
     console.log("server has started on port");
-    console.log("http://localhost:" + PORT);
+    console.log("http://localhost:" + port);
 });
 
 export default app;
