@@ -16,7 +16,14 @@ app.use(authRouter);
 
 // req.isAuthenticated is provided from the auth router
 app.get("/", (req, res) => {
-    res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");
+    res.redirect(
+        req.oidc.isAuthenticated() ? "http://localhost:5173/" : "/checkLogin"
+    );
+});
+
+// Display login status route
+app.get("/checkLogin", (req, res) => {
+    res.send(req.oidc.isAuthenticated() ? "Logged In" : "Logged Out");
 });
 
 // Check Health Route
