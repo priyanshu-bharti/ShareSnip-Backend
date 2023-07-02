@@ -16,7 +16,7 @@ app.use(authRouter);
 
 // Redirection Route req.isAuthenticated is provided from the auth router
 app.get("/", (req, res) => {
-    res.send(
+    res.redirect(
         req.oidc.isAuthenticated() ? "http://localhost:5173/" : "/checkLogin"
     );
 });
