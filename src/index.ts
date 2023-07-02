@@ -14,7 +14,7 @@ app.use(express.json());
 // Auth Routes (/login, /logout, /callback)
 app.use(authRouter);
 
-// req.isAuthenticated is provided from the auth router
+// Redirection Route req.isAuthenticated is provided from the auth router
 app.get("/", (req, res) => {
     res.redirect(
         req.oidc.isAuthenticated() ? "http://localhost:5173/" : "/checkLogin"
